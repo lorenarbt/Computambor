@@ -1,0 +1,44 @@
+<!--
+  PLAYWISE — partials/footer.html
+  Rodapé reutilizável.
+  
+  Como usar:
+  O footer é injetado via js/components.js em cada página
+  usando o elemento <div id="pw-footer"></div>.
+  
+  Se migrar para um framework (PHP, Nunjucks, etc.), basta fazer:
+    PHP:    <?php include 'partials/footer.html'; ?>
+    Nunjucks: {% include "partials/footer.html" %}
+-->
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo">PLAYWISE</div>
+        <p class="footer__tagline">Transformando educação em aventura para mentes curiosas.</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Links rápidos</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobrenos.html">Sobre nós</a></li>
+          <li><a href="atividades.html">Atividades</a></li>
+          <li><a href="registros.html">Registros</a></li>
+          <li><a href="contatenos.html">Contate-nos</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Redes sociais</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer__copyright">
+      © 2025 PLAYWISE — Educação criativa e divertida. Todos os direitos reservados.
+    </p>
+  </div>
+</footer>

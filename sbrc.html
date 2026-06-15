@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLAYWISE | SBRC+</title>
+  <meta name="description" content="Registros do PLAYWISE no SBRC+ 2025 — Simpósio Brasileiro de Redes de Computadores.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    /* === HERO DA PÁGINA === */
+    .page-hero {
+      background: var(--color-dark);
+      color: var(--color-white);
+      padding: var(--space-16) 0 var(--space-12);
+      margin-bottom: var(--space-16);
+    }
+    .page-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: rgba(255,255,255,0.6);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      margin-bottom: var(--space-6);
+      transition: color var(--transition-fast);
+    }
+    .page-hero__back:hover { color: var(--color-accent); }
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 900;
+      color: var(--color-white);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-4);
+    }
+    .page-hero h1 span { color: var(--color-accent); }
+    .page-hero p {
+      font-size: var(--text-lg);
+      color: rgba(255,255,255,0.7);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    /* === BLOCO DE CONTEXTO === */
+    .ctx-block {
+      margin-bottom: var(--space-16);
+    }
+    .ctx-block__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    .ctx-block__num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-brand);
+      color: var(--color-white);
+      font-size: var(--text-base);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .ctx-block__title {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--color-dark);
+    }
+    .ctx-block__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      margin-left: calc(44px + var(--space-4));
+      margin-top: calc(-1 * var(--space-3));
+      margin-bottom: var(--space-5);
+      line-height: 1.6;
+    }
+
+    /* === GRADE DE FOTOS === */
+    .photo-grid {
+      display: grid;
+      gap: var(--space-3);
+    }
+    .photo-grid--2 { grid-template-columns: repeat(2, 1fr); }
+    .photo-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .photo-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+    /* item com destaque (span 2 colunas) */
+    .photo-item { 
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: var(--color-bg);
+    }
+    .photo-item--wide { grid-column: span 2; }
+    .photo-item--tall { grid-row: span 2; }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 4/3;
+      transition: transform var(--transition-slow);
+    }
+    .photo-item--wide img { aspect-ratio: 16/7; }
+    .photo-item--tall img { aspect-ratio: unset; min-height: 100%; }
+
+    .photo-item:hover img { transform: scale(1.04); }
+
+    .photo-item__label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-3) var(--space-4);
+      background: linear-gradient(to top, rgba(30,42,62,0.8), transparent);
+      color: var(--color-white);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    .photo-item:hover .photo-item__label { opacity: 1; }
+
+    /* === DIVIDER === */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: var(--space-12) 0;
+    }
+
+    @media (max-width: 768px) {
+      .photo-grid--3,
+      .photo-grid--4 { grid-template-columns: repeat(2, 1fr); }
+      .photo-item--wide { grid-column: span 2; }
+    }
+    @media (max-width: 480px) {
+      .photo-grid--2,
+      .photo-grid--3,
+      .photo-grid--4 { grid-template-columns: 1fr; }
+      .photo-item--wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body data-page="sbrc.html">
+
+<!-- NAVBAR -->
+<div class="container">
+  <div id="pw-navbar"></div>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="container">
+    <a href="registros.html" class="page-hero__back">
+      <i class="fas fa-arrow-left"></i> Voltar para Registros
+    </a>
+    <h1>SBRC<span>+</span></h1>
+    <p>Simpósio Brasileiro de Redes de Computadores 2025 — apresentação e oficinas do PLAYWISE para pesquisadores, educadores e público geral.</p>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- CONTEXTO 01: Abertura e Apresentação -->
+    <div class="ctx-block">
+      <div class="ctx-block__header">
+        <div class="ctx-block__num">01</div>
+        <h2 class="ctx-block__title">Abertura e Apresentação</h2>
+      </div>
+      <p class="ctx-block__desc">A equipe PLAYWISE apresentou o projeto ao público do SBRC+, revelando como o samba-reggae pode ser uma estratégia poderosa para o ensino do pensamento computacional.</p>
+
+      <div class="photo-grid photo-grid--3">
+        <div class="photo-item photo-item--wide">
+          <img src="assets/images/BannerHome.jpg" alt="Abertura da apresentação do PLAYWISE no SBRC+">
+          <span class="photo-item__label">Abertura do evento</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC17.jpg" alt="Apresentação do projeto ao público">
+          <span class="photo-item__label">Apresentação do projeto</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC1.jpg" alt="Equipe durante a abertura">
+          <span class="photo-item__label">Equipe PLAYWISE</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC8b.jpg" alt="Material exposto no SBRC+">
+          <span class="photo-item__label">Material exposto</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CONTEXTO 02: Oficina de Percussão -->
+    <div class="ctx-block">
+      <div class="ctx-block__header">
+        <div class="ctx-block__num">02</div>
+        <h2 class="ctx-block__title">Oficina de Percussão e Algoritmos</h2>
+      </div>
+      <p class="ctx-block__desc">Participantes vivenciaram na prática como os ritmos do samba-reggae se conectam aos conceitos de decomposição, reconhecimento de padrões e algoritmos.</p>
+
+      <div class="photo-grid photo-grid--3">
+        <div class="photo-item">
+          <img src="assets/images/SBRC2.jpg" alt="Atividade de percussão com crianças">
+          <span class="photo-item__label">Percussão em ação</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC5.jpg" alt="Dinâmica de algoritmos com ritmo">
+          <span class="photo-item__label">Algoritmos no ritmo</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC6.jpg" alt="Crianças tocando instrumentos">
+          <span class="photo-item__label">Tocando e aprendendo</span>
+        </div>
+        <div class="photo-item photo-item--wide">
+          <img src="assets/images/SBRC3.jpg" alt="Grupo participando da oficina">
+          <span class="photo-item__label">Oficina em grupo</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC7.jpg" alt="Instrutor guiando a atividade">
+          <span class="photo-item__label">Mediação pedagógica</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CONTEXTO 03: Atividades de Pensamento Computacional -->
+    <div class="ctx-block">
+      <div class="ctx-block__header">
+        <div class="ctx-block__num">03</div>
+        <h2 class="ctx-block__title">Pensamento Computacional Desplugado</h2>
+      </div>
+      <p class="ctx-block__desc">Sem telas ou dispositivos: apenas papel, cartas, movimentos e muita criatividade para explorar decomposição, padrões, abstração e sequências lógicas.</p>
+
+      <div class="photo-grid photo-grid--4">
+        <div class="photo-item">
+          <img src="assets/images/SBRC4.jpg" alt="Atividade desplugada de abstração">
+          <span class="photo-item__label">Abstração</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC10.jpg" alt="Reconhecimento de padrões rítmicos">
+          <span class="photo-item__label">Padrões rítmicos</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC11.jpg" alt="Atividade de decomposição">
+          <span class="photo-item__label">Decomposição</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC20.jpg" alt="Encerramento das atividades">
+          <span class="photo-item__label">Encerramento</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC8.jpeg" alt="Material de apoio utilizado">
+          <span class="photo-item__label">Material de apoio</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; padding: var(--space-8) 0 var(--space-20);">
+      <a href="oficinas.html" class="btn btn--primary" style="margin-right: var(--space-4);">
+        Ver Oficinas Pelourinho <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="registros.html" class="btn btn--outline">
+        <i class="fas fa-images"></i> Todos os Registros
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<div id="pw-footer"></div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

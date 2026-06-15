@@ -1,0 +1,152 @@
+/* ============================================
+   PLAYWISE — Tokens de Design
+   Cores, tipografia, espaçamentos, sombras
+   ============================================ */
+
+:root {
+  /* Paleta principal */
+  --color-primary:       #F26938;
+  --color-primary-light: #FEF6E8;
+  --color-accent:        #F9A826;
+  --color-dark:          #1E2A3E;
+  --color-dark-mid:      #2D3F58;
+  --color-text:          #4A5568;
+  --color-text-light:    #718096;
+  --color-white:         #ffffff;
+  --color-bg:            #F8FAFC;
+  --color-border:        #EEF2F6;
+
+  /* Gradiente da marca */
+  --gradient-brand: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+
+  /* Tipografia */
+  --font-display: 'Quicksand', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+
+  /* Espaçamentos */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Bordas */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(30,42,62,0.06), 0 1px 2px rgba(30,42,62,0.04);
+  --shadow-md: 0 4px 16px rgba(30,42,62,0.08), 0 2px 6px rgba(30,42,62,0.04);
+  --shadow-lg: 0 10px 40px rgba(30,42,62,0.12), 0 4px 12px rgba(30,42,62,0.06);
+
+  /* Transições */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-pad: 24px;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  line-height: 1.6;
+  font-size: var(--text-base);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+/* ============================================
+   LAYOUT UTILITÁRIOS
+   ============================================ */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.section {
+  padding: var(--space-16) 0;
+}
+
+.section--lg {
+  padding: var(--space-24) 0;
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-dark);
+  font-family: var(--font-display);
+}
+
+.section-title--center {
+  text-align: center;
+}
+
+/* ============================================
+   TIPOGRAFIA
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-dark);
+}

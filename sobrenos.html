@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLAYWISE | Sobre Nós</title>
+  <meta name="description" content="Conheça o PLAYWISE — portfólio digital de atividades desplugadas com samba reggae Afro-baiano.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <style>
+    /* =============================================
+       BANNER CARROSSEL TELA CHEIA
+    ============================================= */
+    .about-banner {
+      width: 100%;
+      margin-bottom: var(--space-16);
+    }
+    .about-banner .carousel {
+      border-radius: 0;
+    }
+    .about-banner .carousel__slide img {
+      height: 520px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 0;
+    }
+
+    /* =============================================
+       INTRO
+    ============================================= */
+    .about-intro {
+      max-width: 780px;
+      margin: 0 auto var(--space-20);
+      text-align: center;
+    }
+    .about-intro h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: var(--space-5);
+    }
+    .about-intro p {
+      font-size: var(--text-lg);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    /* =============================================
+       CARROSSEL 3D
+    ============================================= */
+    .carousel3d-section {
+      margin-bottom: var(--space-20);
+      overflow: hidden;
+    }
+    .carousel3d-section h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: var(--space-10);
+    }
+
+    .carousel3d-wrapper {
+      position: relative;
+      height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+    }
+
+    .carousel3d-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+    }
+
+    .carousel3d-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .carousel3d-item__card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .carousel3d-item__img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel3d-item__info {
+      padding: var(--space-5) var(--space-6) var(--space-6);
+    }
+
+    .carousel3d-item__info h4 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      margin-bottom: var(--space-2);
+      color: var(--color-dark);
+    }
+
+    .carousel3d-item__info p {
+      font-size: var(--text-xs);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    /* Estados de posição: center, left, right, far-left, far-right */
+    .carousel3d-item[data-pos="center"] {
+      transform: translate(-50%, -50%) translateZ(120px) scale(1.1);
+      z-index: 5;
+      opacity: 1;
+      filter: none;
+    }
+    .carousel3d-item[data-pos="left"] {
+      transform: translate(calc(-50% - 240px), -50%) translateZ(0px) rotateY(25deg) scale(0.88);
+      z-index: 4;
+      opacity: 0.8;
+      filter: brightness(0.9);
+    }
+    .carousel3d-item[data-pos="right"] {
+      transform: translate(calc(-50% + 240px), -50%) translateZ(0px) rotateY(-25deg) scale(0.88);
+      z-index: 4;
+      opacity: 0.8;
+      filter: brightness(0.9);
+    }
+    .carousel3d-item[data-pos="far-left"] {
+      transform: translate(calc(-50% - 430px), -50%) translateZ(-80px) rotateY(35deg) scale(0.72);
+      z-index: 3;
+      opacity: 0.5;
+      filter: brightness(0.75);
+    }
+    .carousel3d-item[data-pos="far-right"] {
+      transform: translate(calc(-50% + 430px), -50%) translateZ(-80px) rotateY(-35deg) scale(0.72);
+      z-index: 3;
+      opacity: 0.5;
+      filter: brightness(0.75);
+    }
+    .carousel3d-item[data-pos="hidden"] {
+      transform: translate(-50%, -50%) scale(0.5);
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Botões nav */
+    .carousel3d-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+
+    .carousel3d-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-full);
+      background: var(--color-white);
+      border: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-base);
+      color: var(--color-dark);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-sm);
+    }
+    .carousel3d-btn:hover {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-white);
+      transform: scale(1.08);
+    }
+
+    .carousel3d-dots {
+      display: flex;
+      gap: var(--space-2);
+    }
+    .carousel3d-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-full);
+      background: var(--color-border);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+    .carousel3d-dot.active {
+      background: var(--color-primary);
+      width: 24px;
+    }
+
+    /* =============================================
+       VALORES
+    ============================================= */
+    .values-grid-5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-4);
+      margin-bottom: var(--space-20);
+    }
+
+    /* =============================================
+       CORE VALUES (dark cards)
+    ============================================= */
+    .core-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-bottom: var(--space-20);
+    }
+
+    /* =============================================
+       RESPONSIVO
+    ============================================= */
+    @media (max-width: 900px) {
+      .carousel3d-wrapper { height: 380px; }
+      .carousel3d-item { width: 260px; }
+      .carousel3d-item[data-pos="left"]     { transform: translate(calc(-50% - 190px), -50%) rotateY(20deg) scale(0.83); }
+      .carousel3d-item[data-pos="right"]    { transform: translate(calc(-50% + 190px), -50%) rotateY(-20deg) scale(0.83); }
+      .carousel3d-item[data-pos="far-left"]  { transform: translate(calc(-50% - 340px), -50%) translateZ(-60px) rotateY(30deg) scale(0.65); opacity: 0.3; }
+      .carousel3d-item[data-pos="far-right"] { transform: translate(calc(-50% + 340px), -50%) translateZ(-60px) rotateY(-30deg) scale(0.65); opacity: 0.3; }
+      .values-grid-5 { grid-template-columns: repeat(3, 1fr); }
+      .core-values   { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .carousel3d-wrapper { height: 340px; }
+      .carousel3d-item { width: 230px; }
+      .carousel3d-item[data-pos="left"]     { transform: translate(calc(-50% - 150px), -50%) rotateY(15deg) scale(0.78); }
+      .carousel3d-item[data-pos="right"]    { transform: translate(calc(-50% + 150px), -50%) rotateY(-15deg) scale(0.78); }
+      .carousel3d-item[data-pos="far-left"]  { opacity: 0; pointer-events: none; }
+      .carousel3d-item[data-pos="far-right"] { opacity: 0; pointer-events: none; }
+      .values-grid-5 { grid-template-columns: repeat(2, 1fr); }
+      .about-banner .carousel__slide img { height: 320px; }
+    }
+  </style>
+</head>
+<body data-page="sobrenos.html">
+
+<!-- NAVBAR -->
+<div class="container">
+  <div id="pw-navbar"></div>
+</div>
+
+<main>
+
+  <!-- ===== BANNER CARROSSEL TELA CHEIA ===== -->
+  <div class="about-banner" role="region" aria-label="Galeria do projeto">
+    <div class="carousel" data-interval="5000">
+      <div class="carousel__track">
+
+        <div class="carousel__slide">
+          <img src="assets/images/BannerSobre.jpg" alt="Banner PLAYWISE — Explorando o Pensamento Computacional com o Samba Reggae">
+          <div class="carousel__overlay">
+            <div class="carousel__caption">
+              <h2>Explorando o Pensamento Computacional</h2>
+              <p>Com o samba-reggae Afro-baiano como linguagem pedagógica</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel__slide">
+          <img src="assets/images/SBRC2.jpg" alt="Oficina SBRC+ 2025">
+          <div class="carousel__overlay">
+            <div class="carousel__caption">
+              <h2>SBRC+ 2025</h2>
+              <p>Pensamento computacional desplugado em ação</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel__slide">
+          <img src="assets/images/SBRC3.jpg" alt="Oficinas no Pelourinho">
+          <div class="carousel__overlay">
+            <div class="carousel__caption">
+              <h2>Oficinas Pelourinho</h2>
+              <p>Levando a computação desplugada ao coração da Bahia</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel__slide">
+          <img src="assets/images/SBRC4.jpg" alt="Crianças na atividade">
+          <div class="carousel__overlay">
+            <div class="carousel__caption">
+              <h2>Aprendizado Lúdico e Significativo</h2>
+              <p>Cultura e tecnologia de mãos dadas</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel__btn carousel__btn--prev" aria-label="Slide anterior"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel__btn carousel__btn--next" aria-label="Próximo slide"><i class="fas fa-chevron-right"></i></button>
+      <div class="carousel__dots"></div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- ===== INTRO ===== -->
+    <div class="about-intro">
+      <h1>Sobre o PLAYWISE</h1>
+      <p>PLAYWISE é um portfólio digital desenvolvido com o propósito de disponibilizar atividades desplugadas, utilizando toda a herança ancestral e cultural presente no samba-reggae Afro-baiano como estratégia pedagógica para o ensino do pensamento computacional.</p>
+    </div>
+
+    <!-- ===== VALORES ===== -->
+    <section aria-labelledby="values-title" style="margin-bottom:var(--space-20);">
+      <h2 class="section-title section-title--center" id="values-title" style="margin-bottom:2rem;">Nossos Valores</h2>
+      <div class="values-grid-5">
+        <article class="value-card">
+          <i class="fas fa-child" aria-hidden="true"></i>
+          <h3>Público-alvo</h3>
+          <p>Crianças e adolescentes com idade entre 6 e 18 anos.</p>
+        </article>
+        <article class="value-card">
+          <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+          <h3>Ludicidade</h3>
+          <p>Dinâmicas que exploram a ludicidade e a interdisciplinaridade.</p>
+        </article>
+        <article class="value-card">
+          <i class="fas fa-book-open" aria-hidden="true"></i>
+          <h3>Materiais pedagógicos</h3>
+          <p>Flashcards, impressões, materiais de apoio e muito mais!</p>
+        </article>
+        <article class="value-card">
+          <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          <h3>Raciocínio lógico</h3>
+          <p>Atividades que estimulam o pensamento computacional.</p>
+        </article>
+        <article class="value-card">
+          <i class="fas fa-heart" aria-hidden="true"></i>
+          <h3>Aprendizagem significativa</h3>
+          <p>Valorização do contexto cultural e da coletividade.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CARROSSEL 3D ===== -->
+    <section class="carousel3d-section" aria-labelledby="c3d-title">
+      <h2 id="c3d-title">Momentos do Projeto</h2>
+
+      <div class="carousel3d-wrapper" id="c3d">
+        <div class="carousel3d-track" id="c3d-track">
+          <!-- cards injetados via JS -->
+        </div>
+      </div>
+
+      <div class="carousel3d-nav">
+        <button class="carousel3d-btn" id="c3d-prev" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="carousel3d-dots" id="c3d-dots"></div>
+        <button class="carousel3d-btn" id="c3d-next" aria-label="Próximo">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== PILARES ===== -->
+    <section aria-labelledby="pillars-title" style="margin-bottom:var(--space-20);">
+      <h2 class="section-title section-title--center" id="pillars-title" style="margin-bottom:2rem;">Pilares do Projeto</h2>
+      <div class="core-values">
+        <article class="core-value-card">
+          <i class="fas fa-rocket" aria-hidden="true"></i>
+          <h3>Inovação</h3>
+          <p>Abordagem pioneira que une cultura afro-brasileira e pensamento computacional, criando um método de ensino único e culturalmente situado.</p>
+        </article>
+        <article class="core-value-card">
+          <i class="fas fa-hands-helping" aria-hidden="true"></i>
+          <h3>Colaboração</h3>
+          <p>Atividades coletivas que estimulam o trabalho em equipe, a escuta ativa e a construção conjunta do conhecimento.</p>
+        </article>
+        <article class="core-value-card">
+          <i class="fas fa-trophy" aria-hidden="true"></i>
+          <h3>Excelência</h3>
+          <p>Materiais cuidadosamente desenvolvidos para garantir experiências de aprendizagem ricas, significativas e alinhadas com a BNCC.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== DEPOIMENTO ===== -->
+    <section class="testimonial" style="margin-bottom:var(--space-20);" aria-label="Depoimento">
+      <div class="testimonial__quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
+      <blockquote class="testimonial__text">
+        "Ver o resultado dessas atividades foi uma das experiências mais gratificantes da minha carreira. Sinto uma alegria imensa por ter proporcionado esse momento; os resultados foram além do aprendizado técnico."
+      </blockquote>
+      <cite class="testimonial__author">
+        <i class="fas fa-user-circle" aria-hidden="true"></i>
+        Deize Oliveira — Musicoterapeuta
+      </cite>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section style="text-align:center; padding-bottom:var(--space-24);">
+      <h2 class="section-title" style="margin-bottom:1rem;">Pronto para explorar as atividades?</h2>
+      <p style="color:var(--color-text); margin-bottom:2rem; font-size:var(--text-lg);">Acesse o material completo e comece sua jornada no pensamento computacional.</p>
+      <a href="atividades.html" class="btn btn--primary">Ver atividades <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+  </div>
+</main>
+
+<div id="pw-footer"></div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+/* =============================================
+   CARROSSEL 3D — sobrenos.html
+   Lógica local para não poluir main.js
+============================================= */
+(function () {
+  const slides = [
+    {
+      img: 'assets/images/SBRC2.jpg',
+      title: 'SBRC+ 2025',
+      desc: 'Apresentação do PLAYWISE para pesquisadores e educadores no maior simpósio de redes do Brasil.'
+    },
+    {
+      img: 'assets/images/Algoritmo1.png',
+      title: 'Aula de Algoritmos',
+      desc: 'Crianças aprendendo a criar sequências lógicas através dos ritmos do samba-reggae.'
+    },
+    {
+      img: 'assets/images/Decomposicao.png',
+      title: 'Decomposição',
+      desc: 'Quebrando grandes problemas em partes menores — o primeiro pilar do pensamento computacional.'
+    },
+    {
+      img: 'assets/images/SBRC3.jpg',
+      title: 'Oficinas Pelourinho',
+      desc: 'Atividades desplugadas no coração histórico de Salvador com a comunidade local.'
+    },
+    {
+      img: 'assets/images/Abstracao1.jpeg',
+      title: 'Abstração',
+      desc: 'Focando no que é essencial: as crianças aprendem a abstrair o ritmo em instruções lógicas.'
+    },
+    {
+      img: 'assets/images/SBRC5.jpg',
+      title: 'Participantes',
+      desc: 'Estudantes e professores vivenciando o pensamento computacional desplugado na prática.'
+    },
+    {
+      img: 'assets/images/Abstracao2.jpeg',
+      title: 'Criatividade em Ação',
+      desc: 'Cada criança como protagonista do seu próprio processo de aprendizagem e descoberta.'
+    }
+  ];
+
+  const POSITIONS = ['far-left', 'left', 'center', 'right', 'far-right'];
+
+  const track = document.getElementById('c3d-track');
+  const dotsEl = document.getElementById('c3d-dots');
+  let current = 0;
+  const total = slides.length;
+
+  // Cria cards
+  slides.forEach((s, i) => {
+    const el = document.createElement('div');
+    el.className = 'carousel3d-item';
+    el.dataset.index = i;
+    el.innerHTML = `
+      <div class="carousel3d-item__card">
+        <img class="carousel3d-item__img" src="${s.img}" alt="${s.title}" loading="lazy">
+        <div class="carousel3d-item__info">
+          <h4>${s.title}</h4>
+          <p>${s.desc}</p>
+        </div>
+      </div>`;
+    el.addEventListener('click', () => {
+      const offset = i - current;
+      if (offset !== 0) goTo(current + offset);
+    });
+    track.appendChild(el);
+  });
+
+  // Cria dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'carousel3d-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', `Slide ${i + 1}`);
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function updatePositions() {
+    const items = track.querySelectorAll('.carousel3d-item');
+    items.forEach((el, i) => {
+      const offset = ((i - current) % total + total) % total;
+      // offset 0=center, 1=right, 2=far-right, -1=left, -2=far-left
+      const normalized = offset <= Math.floor(total / 2) ? offset : offset - total;
+      let pos;
+      if (normalized === 0)       pos = 'center';
+      else if (normalized === 1)  pos = 'right';
+      else if (normalized === -1) pos = 'left';
+      else if (normalized === 2)  pos = 'far-right';
+      else if (normalized === -2) pos = 'far-left';
+      else                        pos = 'hidden';
+      el.dataset.pos = pos;
+    });
+
+    // Dots
+    dotsEl.querySelectorAll('.carousel3d-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    current = ((index % total) + total) % total;
+    updatePositions();
+  }
+
+  document.getElementById('c3d-prev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('c3d-next').addEventListener('click', () => goTo(current + 1));
+
+  // Teclado
+  document.getElementById('c3d').addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft')  goTo(current - 1);
+  });
+
+  // Auto
+  let auto = setInterval(() => goTo(current + 1), 4500);
+  document.getElementById('c3d').addEventListener('mouseenter', () => clearInterval(auto));
+  document.getElementById('c3d').addEventListener('mouseleave', () => {
+    auto = setInterval(() => goTo(current + 1), 4500);
+  });
+
+  updatePositions();
+})();
+</script>
+
+</body>
+</html>

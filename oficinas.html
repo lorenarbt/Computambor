@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLAYWISE | Oficinas Pelourinho</title>
+  <meta name="description" content="Registros das Oficinas PLAYWISE no Pelourinho — atividades desplugadas com crianças e adolescentes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    .page-hero {
+      background: var(--color-dark);
+      color: var(--color-white);
+      padding: var(--space-16) 0 var(--space-12);
+      margin-bottom: var(--space-16);
+    }
+    .page-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: rgba(255,255,255,0.6);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      margin-bottom: var(--space-6);
+      transition: color var(--transition-fast);
+    }
+    .page-hero__back:hover { color: var(--color-accent); }
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 900;
+      color: var(--color-white);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-4);
+    }
+    .page-hero h1 span { color: var(--color-accent); }
+    .page-hero p {
+      font-size: var(--text-lg);
+      color: rgba(255,255,255,0.7);
+      max-width: 620px;
+      line-height: 1.7;
+    }
+    .page-hero__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-top: var(--space-6);
+    }
+    .page-hero__badge {
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      background: rgba(249,168,38,0.2);
+      color: var(--color-accent);
+      border: 1px solid rgba(249,168,38,0.3);
+    }
+
+    .ctx-block { margin-bottom: var(--space-16); }
+    .ctx-block__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    .ctx-block__num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-brand);
+      color: var(--color-white);
+      font-size: var(--text-base);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .ctx-block__title {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--color-dark);
+    }
+    .ctx-block__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      margin-left: calc(44px + var(--space-4));
+      margin-top: calc(-1 * var(--space-3));
+      margin-bottom: var(--space-5);
+      line-height: 1.6;
+    }
+
+    .photo-grid { display: grid; gap: var(--space-3); }
+    .photo-grid--2 { grid-template-columns: repeat(2, 1fr); }
+    .photo-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .photo-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+    .photo-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: var(--color-bg);
+    }
+    .photo-item--wide { grid-column: span 2; }
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 4/3;
+      transition: transform var(--transition-slow);
+    }
+    .photo-item--wide img { aspect-ratio: 16/7; }
+    .photo-item:hover img { transform: scale(1.04); }
+    .photo-item__label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: var(--space-3) var(--space-4);
+      background: linear-gradient(to top, rgba(30,42,62,0.8), transparent);
+      color: var(--color-white);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+    .photo-item:hover .photo-item__label { opacity: 1; }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: var(--space-12) 0;
+    }
+
+    @media (max-width: 768px) {
+      .photo-grid--3, .photo-grid--4 { grid-template-columns: repeat(2, 1fr); }
+      .photo-item--wide { grid-column: span 2; }
+    }
+    @media (max-width: 480px) {
+      .photo-grid--2, .photo-grid--3, .photo-grid--4 { grid-template-columns: 1fr; }
+      .photo-item--wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body data-page="oficinas.html">
+
+<div class="container">
+  <div id="pw-navbar"></div>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <a href="registros.html" class="page-hero__back">
+      <i class="fas fa-arrow-left"></i> Voltar para Registros
+    </a>
+    <h1>Oficinas <span>Pelourinho</span></h1>
+    <p>Atividades desplugadas de pensamento computacional realizadas no coração histórico de Salvador — o Pelourinho — com crianças e adolescentes da comunidade.</p>
+    <div class="page-hero__badges">
+      <span class="page-hero__badge"><i class="fas fa-map-marker-alt"></i> Pelourinho, Salvador — BA</span>
+      <span class="page-hero__badge"><i class="fas fa-users"></i> 6 a 18 anos</span>
+      <span class="page-hero__badge"><i class="fas fa-drum"></i> Samba Reggae</span>
+      <span class="page-hero__badge"><i class="fas fa-brain"></i> Computação Desplugada</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- CONTEXTO 01: Acolhimento e Introdução -->
+    <div class="ctx-block">
+      <div class="ctx-block__header">
+        <div class="ctx-block__num">01</div>
+        <h2 class="ctx-block__title">Acolhimento e Introdução</h2>
+      </div>
+      <p class="ctx-block__desc">Momento inicial de acolhimento das crianças, apresentação da proposta e criação de vínculos entre os participantes — fundamental para a construção coletiva do aprendizado.</p>
+
+      <div class="photo-grid photo-grid--3">
+        <div class="photo-item photo-item--wide">
+          <img src="assets/images/Aula4.1.jpeg" alt="Acolhimento inicial com as crianças">
+          <span class="photo-item__label">Chegada e acolhimento</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Aula 4.2.jpeg" alt="Apresentação da proposta pedagógica">
+          <span class="photo-item__label">Apresentação da proposta</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Algoritmo1.png" alt="Primeiros momentos da oficina">
+          <span class="photo-item__label">Início das atividades</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Algoritmo2.png" alt="Crianças interagindo com os materiais">
+          <span class="photo-item__label">Explorando os materiais</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CONTEXTO 02: Decomposição e Padrões -->
+    <div class="ctx-block">
+      <div class="ctx-block__header">
+        <div class="ctx-block__num">02</div>
+        <h2 class="ctx-block__title">Decomposição e Padrões Rítmicos</h2>
+      </div>
+      <p class="ctx-block__desc">As crianças aprenderam a decompor sequências musicais em partes menores e a identificar padrões repetitivos — pilares do pensamento computacional vivenciados através do ritmo.</p>
+
+      <div class="photo-grid photo-grid--3">
+        <div class="photo-item">
+          <img src="assets/images/Decomposicao.png" alt="Atividade de decomposição de ritmos">
+          <span class="photo-item__label">Quebrando o ritmo em partes</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Aula 4.3.jpeg" alt="Reconhecimento de padrões na percussão">
+          <span class="photo-item__label">Padrões na percussão</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Aula 4.4.jpeg" alt="Atividade de sequenciamento">
+          <span class="photo-item__label">Sequenciamento</span>
+        </div>
+        <div class="photo-item photo-item--wide">
+          <img src="assets/images/Aula 4.5.jpeg" alt="Grupo praticando decomposição coletiva">
+          <span class="photo-item__label">Prática coletiva</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Aula4.3.jpeg" alt="Crianças identificando padrões">
+          <span class="photo-item__label">Identificando padrões</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- CONTEXTO 03: Abstração e Algoritmos -->
+    <div class="ctx-block">
+      <div class="ctx-block__header">
+        <div class="ctx-block__num">03</div>
+        <h2 class="ctx-block__title">Abstração e Algoritmos</h2>
+      </div>
+      <p class="ctx-block__desc">A etapa mais avançada: as crianças criaram suas próprias sequências lógicas e aprenderam a abstrair elementos musicais para representar instruções computacionais.</p>
+
+      <div class="photo-grid photo-grid--4">
+        <div class="photo-item">
+          <img src="assets/images/Abstracao1.jpeg" alt="Atividade de abstração com fichas">
+          <span class="photo-item__label">Abstração com fichas</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Abstracao2.jpeg" alt="Criando algoritmos com ritmo">
+          <span class="photo-item__label">Criando algoritmos</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/Abstracao4.jpeg" alt="Execução do algoritmo criado">
+          <span class="photo-item__label">Executando o algoritmo</span>
+        </div>
+        <div class="photo-item">
+          <img src="assets/images/SBRC8.jpeg" alt="Material de apoio — flashcards">
+          <span class="photo-item__label">Flashcards pedagógicos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; padding: var(--space-8) 0 var(--space-20);">
+      <a href="sbrc.html" class="btn btn--primary" style="margin-right:var(--space-4);">
+        Ver SBRC+ <i class="fas fa-arrow-right"></i>
+      </a>
+      <a href="registros.html" class="btn btn--outline">
+        <i class="fas fa-images"></i> Todos os Registros
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<div id="pw-footer"></div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

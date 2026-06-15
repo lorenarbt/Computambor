@@ -1,180 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>O pensamento computacional que pulsa no samba reggae</title>
-    <!-- Google Fonts para uma tipografia moderna -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (gratuito) para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS Externo -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLAYWISE | Pensamento Computacional no Samba Reggae</title>
+  <meta name="description" content="A percussão Afro-baiana como estratégia de computação desplugada para o ensino do pensamento computacional.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
-<body>
+<body data-page="index.html">
 
 <div class="container">
-    <!-- Navegação -->
-    <div class="navbar">
-        <div class="logo">COMPUTAMBOR</div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="sobrenos.html">Sobre nós</a></li>
-            <li><a href="#">Registros</a></li>
-            <li><a href="atividades.html">Atividades</a></li>
-            <li><a href="#">Contate nos</a></li>
+  <div id="pw-navbar"></div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <span class="hero__eyebrow">
+          <i class="fas fa-drum" aria-hidden="true"></i>
+          Computação Desplugada
+        </span>
+        <h1 id="hero-title">
+          O pensamento computacional que <em>pulsa no samba reggae</em>
+        </h1>
+        <p>A percussão Afro-baiana como estratégia de computação desplugada para o ensino do pensamento computacional.</p>
+        <div class="hero__actions">
+          <a href="sobrenos.html" class="btn btn--primary">Saiba mais <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <a href="atividades.html" class="btn btn--ghost">Ver atividades <i class="fas fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img src="assets/images/Img1Home.png" alt="Oficina de percussão Afro-baiana para crianças" loading="lazy">
+      </div>
+    </section>
+
+    <!-- CARDS PRINCIPAIS -->
+    <section class="section" aria-label="Pilares do projeto">
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card__icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
+          <h3 class="card__title">Ludicidade</h3>
+          <p class="card__body">Dinâmicas que tornam o aprendizado prazeroso, explorando o movimento, o ritmo e a cooperação entre as crianças.</p>
+          <a href="sobrenos.html" class="btn btn--ghost" style="margin-top:1rem;">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="card">
+          <div class="card__icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+          <h3 class="card__title">Pilares</h3>
+          <p class="card__body">Decomposição, reconhecimento de padrões, abstração e algoritmos — os quatro pilares do pensamento computacional em ação.</p>
+          <a href="sobrenos.html" class="btn btn--ghost" style="margin-top:1rem;">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="card">
+          <div class="card__icon"><i class="fas fa-music" aria-hidden="true"></i></div>
+          <h3 class="card__title">Samba Reggae</h3>
+          <p class="card__body">A herança ancestral Afro-baiana serve de contexto cultural para ensinar lógica, ritmo e sequências de forma significativa.</p>
+          <a href="sobrenos.html" class="btn btn--ghost" style="margin-top:1rem;">Saiba mais <i class="fas fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CARROSSEL DE REGISTROS -->
+    <section class="section" aria-labelledby="carousel-title">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:var(--space-6); flex-wrap:wrap; gap:var(--space-4);">
+        <h2 class="section-title" id="carousel-title">Registros das Oficinas</h2>
+        <a href="registros.html" class="btn btn--outline btn--sm">Ver todos os registros <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="carousel" data-interval="4000" role="region" aria-label="Carrossel de registros das oficinas">
+        <div class="carousel__track">
+
+          <div class="carousel__slide">
+            <img src="assets/images/BannerHome.jpg" alt="Oficina SBRC — percussão e pensamento computacional" style="height:480px; object-fit:cover; border-radius:var(--radius-xl);">
+            <div class="carousel__overlay">
+              <div class="carousel__caption">
+                <h2>Pensamento Computacional no Ritmo</h2>
+                <p>Apresentação do projeto no SBRC 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <img src="assets/images/SBRC2.jpg" alt="Atividade de decomposição de ritmos" style="height:480px; object-fit:cover; border-radius:var(--radius-xl);">
+            <div class="carousel__overlay">
+              <div class="carousel__caption">
+                <h2>SBRC+ 2025</h2>
+                <p>Crianças e professores explorando algoritmos e ritmos</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <img src="assets/images/SBRC3.jpg" alt="Crianças participando da oficina de percussão" style="height:480px; object-fit:cover; border-radius:var(--radius-xl);">
+            <div class="carousel__overlay">
+              <div class="carousel__caption">
+                <h2>Oficinas no Pelourinho</h2>
+                <p>Computação desplugada com herança cultural Afro-baiana</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <img src="assets/images/SBRC4.jpg" alt="Dinâmica de reconhecimento de padrões" style="height:480px; object-fit:cover; border-radius:var(--radius-xl);">
+            <div class="carousel__overlay">
+              <div class="carousel__caption">
+                <h2>Aprendizado Significativo</h2>
+                <p>Atividades lúdicas que unem cultura e pensamento lógico</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__slide">
+            <img src="assets/images/SBRC17.jpg" alt="Apresentação do projeto" style="height:480px; object-fit:cover; border-radius:var(--radius-xl);">
+            <div class="carousel__overlay">
+              <div class="carousel__caption">
+                <h2>Percussão &amp; Computação</h2>
+                <p>O samba reggae como ponte para o raciocínio lógico</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel__btn carousel__btn--prev" aria-label="Slide anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel__btn carousel__btn--next" aria-label="Próximo slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="carousel__dots" role="tablist" aria-label="Slides"></div>
+      </div>
+    </section>
+
+    <!-- COMPUTAÇÃO DESPLUGADA -->
+    <section class="features-row section" aria-labelledby="features-title">
+      <div class="features-row__text">
+        <h2 id="features-title">O que é Computação Desplugada?</h2>
+        <p>Uma metodologia de ensino que introduz conceitos de ciências da computação, algoritmos e lógica — como números binários e criptografia — sem utilizar computadores ou dispositivos eletrônicos.</p>
+        <ul class="features-list">
+          <li>
+            <i class="fas fa-cubes" aria-hidden="true"></i>
+            Atividades dinâmicas e lúdicas que engajam alunos de todas as idades
+          </li>
+          <li>
+            <img src="assets/icons/mdi_cards.png" alt="" class="custom-icon">
+            Materiais concretos como papel, cartas e jogos com movimento físico
+          </li>
+          <li>
+            <i class="fas fa-brain" aria-hidden="true"></i>
+            Foco no desenvolvimento do pensamento computacional e raciocínio lógico
+          </li>
         </ul>
-        <button class="btn-outline">Começar</button>
-    </div>
+        <a href="atividades.html" class="btn btn--primary">Ver atividades <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="features-row__image">
+        <img src="assets/images/Img2Home.png" alt="Materiais didáticos das atividades desplugadas" loading="lazy">
+      </div>
+    </section>
 
-    <!-- Hero principal: Unlock the Secrets -->
-    <div class="hero">
-        <div class="hero-content">
-            <h1>O pensamento computacional que pulsa no samba reggae</h1>
-            <p>A percussão Afro-baiana como estratégia de computação desplugada para o ensino do pensamento computacional.</p>
-            <a href="sobrenos.html" class="btn-primary">Saiba mais →</a>
+    <!-- RECURSOS DIDÁTICOS -->
+    <section class="teacher-profile section" aria-labelledby="resources-title">
+      <div class="teacher-profile__avatar">
+        <i class="fas fa-chalkboard-user" aria-hidden="true"></i>
+        <h4>Recursos</h4>
+        <p>Professores e alunos</p>
+      </div>
+      <div class="teacher-profile__info">
+        <h3 id="resources-title">Recursos didáticos</h3>
+        <p>Divididos em 4 aulas, os materiais disponibilizados dispõem de atividades desplugadas que, através da intersecção entre os pilares e os elementos do pensamento computacional, compõem dinâmicas lúdicas e ações interdisciplinares.</p>
+        <div class="teacher-profile__stats">
+          <span class="stat-mini"><i class="fas fa-calendar-alt"></i> 4 aulas</span>
+          <span class="stat-mini"><i class="fas fa-user-graduate"></i> Adaptável a diferentes turmas</span>
+          <span class="stat-mini"><i class="fas fa-smile"></i> Atividades lúdicas</span>
+          <span class="stat-mini"><i class="fas fa-book-open"></i> 20+ materiais de apoio</span>
         </div>
-       <div class="hero-stats">
-        <img src="assets/images/Img1.png" alt="Descrição da Oficina" class="img-hero">
-        </div>
-        </div>
+        <a href="sobrenos.html" class="btn btn--ghost" style="margin-top:var(--space-4);">Saiba mais <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
 
-    <!-- Três cards principais: Astronomy, Museum, Comparing -->
-    <div class="cards-grid">
-        <div class="card">
-            <div class="card-icon"><i class="fas fa-meteor"></i></div>
-            <h3>Ludicidade</h3>
-            <p>By learning about constellations, the sky becomes a map for kids. Learn about the stars, planets, and constellations that will help you understand the universe.</p>
-            <a href="sobrenos.html" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="card">
-            <div class="card-icon"><i class="fas fa-landmark"></i></div>
-            <h3>Pilares</h3>
-            <p>Exploring different exhibits helps children develop critical thinking and a deeper understanding of the world around them.</p>
-            <a href="sobrenos.html" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="card">
-            <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
-            <h3>Comparing & Signing</h3>
-            <p>From scientific journals to art projects, comparing and contrasting concepts is an essential part of education.</p>
-            <a href="sobrenos.html" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </div>
+    <!-- DEPOIMENTO -->
+    <section class="testimonial section" aria-label="Depoimento">
+      <div class="testimonial__quote-icon" aria-hidden="true"><i class="fas fa-quote-left"></i></div>
+      <blockquote class="testimonial__text">
+        "Ver o resultado dessas atividades foi uma das experiências mais gratificantes da minha carreira. Sinto uma alegria imensa por ter proporcionado esse momento; os resultados foram além do aprendizado técnico."
+      </blockquote>
+      <cite class="testimonial__author">
+        <i class="fas fa-user-circle" aria-hidden="true"></i>
+        Deize Oliveira — Musicoterapeuta
+      </cite>
+      <div style="margin-top:1.5rem;">
+        <a href="sobrenos.html" class="btn btn--ghost">Ver todos os depoimentos <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
 
-    <!-- Seção Computação Desplugada-->
-    <div class="features-row">
-        <div class="features-text">
-            <h2>O que é Computação Desplugada?</h2>
-            <p>A computação desplugada é uma metodologia de ensino que introduz conceitos de ciências da computação, algoritmos e lógica (como números binários e criptografia) sem utilizar computadores ou dispositivos eletrônicos.</p>
-            <ul class="feature-list">
-                <li><i class="fas fa-cubes"></i> Atividades dinâmicas e lúdicas</li>
-                <li><img src="assets/icons/mdi_cards.png" alt="ícone de carta" class="custom-icon"> Materiais concretos (papel, cartas, jogos) e movimento físico.</li>
-                <li><i class="fas fa-brain"></i> Focando no desenvolvimento do pensamento computacional</li>
-            </ul>
-            <a href="#" class="btn-primary" style="background:#F26938;">Acesse →</a>
-        </div>
-        <div class="features-img">
-            <img src="assets/images/Img2.png" alt="Descrição da imagem" style="width: 320px; height: auto;">
-        </div>
-        </div>
+    <!-- DESCUBRA MAIS -->
+    <section class="section" aria-labelledby="discover-title">
+      <h2 class="section-title" id="discover-title" style="margin-bottom:1.5rem;">Descubra Mais</h2>
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="article-card__icon"><i class="fas fa-music"></i></div>
+          <h4 class="article-card__title">História do Samba Reggae</h4>
+          <p class="article-card__body">Conheça a origem do samba reggae, sua herança cultural Afro-baiana e como ele conecta ritmo, história e identidade.</p>
+          <a href="sobrenos.html" class="btn btn--sm btn--outline">Ver mais →</a>
+        </article>
+        <article class="article-card">
+          <div class="article-card__icon"><i class="fas fa-film"></i></div>
+          <h4 class="article-card__title">Documentário sobre Percussão</h4>
+          <p class="article-card__body">Assista ao mini documentário que mostra a aplicação das atividades e a riqueza da percussão Afro-baiana.</p>
+          <a href="atividades.html" class="btn btn--sm btn--outline">Ver mais →</a>
+        </article>
+        <article class="article-card">
+          <div class="article-card__icon"><i class="fas fa-images"></i></div>
+          <h4 class="article-card__title">Registros das Atividades</h4>
+          <p class="article-card__body">Veja os registros fotográficos e os resultados das oficinas realizadas com crianças e adolescentes.</p>
+          <a href="registros.html" class="btn btn--sm btn--outline">Ver mais →</a>
+        </article>
+      </div>
+    </section>
 
-    <!-- Teacher role-->
-    <div class="teacher-profile">
-        <div class="teacher-avatar">
-            <i class="fas fa-chalkboard-user"></i>
-            <h4>Recursos</h4>
-            <p>Professores e alunos</p>
-        </div>
-        <div class="teacher-info">
-            <h3>Recurssos didáticos </h3>
-            <p>Divididos no formato de 4 aulas, os materiais didáticos disponibilizados dispõem de atividades desplugadas que através da intersecção entre os pilares e os principais elementos do pensamento computacional, compõem dinâmicas lúdicas e ações interdisciplinares.</p>
-            <div class="teacher-stats">
-                <span class="stat-mini"><i class="fas fa-calendar-alt"></i> 4 aulas</span>
-                <span class="stat-mini"><i class="fas fa-user-graduate"></i> Adaptável a diferentes turmas</span>
-                <span class="stat-mini"><i class="fas fa-smile"></i> Atividades Lúdicas</span>
-                <span class="stat-mini"><i class="fas fa-book-open"></i>  20+ Materiais de apoio </span>
-            </div>
-            <a href="sobrenos.html" class="card-link" style="margin-top: 20px; display: inline-block;">Saiba mais  <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </div>
+  </div>
+</main>
 
-    <!-- Exciting Classes for Every Kid + stimulating space (2 blocos) -->
-    <div class="cards-grid" style="margin-bottom: 20px;">
-        <div class="card" style="background:#FEF6E8;">
-            <div class="card-icon"><i class="fas fa-chalkboard"></i></div>
-            <h3>A DEFINIR</h3>
-            <p>We bring learning to life with engaging activities, real-world connections, and a focus on making every moment exciting.</p>
-            <a href="sobrenos.html" class="card-link">Saber mais →</a>
-        </div>
-        <div class="card" style="background:#FEF6E8;">
-            <div class="card-icon"><i class="fas fa-seedling"></i></div>
-            <h3>A DEFINIR</h3>
-            <p>Our learning environment is designed to inspire curiosity and creativity, fostering a love for exploration and academic growth.</p>
-            <a href="sobrenos.html" class="card-link">Saber mais →</a>
-        </div>
-    </div>
+<div id="pw-footer"></div>
 
-    <!-- Depoimentos "What Parents Say" -->
-    <div class="testimonials">
-        <i class="fas fa-quote-left" style="font-size: 2rem; color:#F9A826; opacity:0.6;"></i>
-        <div class="testimonial-text">"Ver o resultado dessas atividades foi uma das experiências mais gratificantes da minha carreira. Sinto uma alegria imensa por ter proporcionado esse momento; os resultados foram além do aprendizado técnico"</div>
-        <div class="stat-mini" style="background: white; display: inline-block;">— Deize Oliveira - Musicoterapeuta</div>
-        <div style="margin-top: 24px;"><a href="sobrenos.html" class="card-link">Ver todos os testemunhos →</a></div>
-    </div>
-
-    <!-- Discover fun learning opportunities + stay updated + Build confidence (três colunas estilo artigos/news) -->
-    <h2 class="section-title" style="margin-bottom: 20px;">Descubra Mais</h2>
-    <div class="grid-articles">
-        <div class="article-card">
-            <i class="fas fa-rocket" style="font-size: 2rem; color:#F26938;"></i>
-            <h4>História do samba reggae</h4>
-            <p>Explore our fun and engaging learning opportunities and let your child thrive.</p>
-            <a href="sobrenos.html" class="btn-sm">View All →</a>
-        </div>
-        <div class="article-card">
-            <i class="fas fa-newspaper" style="font-size: 2rem; color:#F26938;"></i>
-            <h4>Documentário sobre Percussão</h4>
-            <p>Stay informed with our latest news and articles about modern education.</p>
-            <a href="sobrenos.html" class="btn-sm">View All →</a>
-        </div>
-        <div class="article-card">
-            <i class="fas fa-heart" style="font-size: 2rem; color:#F26938;"></i>
-            <h4>Registros das atividades</h4>
-            <p>Discover how COMPUTAMBOR can help build confidence and a lifelong love for learning.</p>
-            <a href="sobrenos.html" class="btn-sm">View All →</a>
-        </div>
-    </div>
-
-</div> <!-- fim container -->
-
-    <footer>
-        <div class="container">
-            <div class="footer-inner">
-                <div>
-                    <div class="footer-logo">COMPUTAMBOR</div>
-                    <p style="margin-top: 16px; max-width: 260px;">Transformando educação em aventura para mentes curiosas.</p>
-                </div>
-                <div>
-                    <h4>Links rápidos</h4>
-                    <ul style="list-style: none; margin-top: 10px;">
-                        <li><a href="#" style="color:#ddd; text-decoration: none;">Sobre nós</a></li>
-                        <li><a href="#" style="color:#ddd; text-decoration: none;">Programas</a></li>
-                        <li><a href="#" style="color:#ddd; text-decoration: none;">Contato</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Redes</h4>
-                    <div style="display: flex; gap: 15px; margin-top: 12px;">
-                        <i class="fab fa-instagram" style="font-size: 1.4rem;"></i>
-                        <i class="fab fa-facebook" style="font-size: 1.4rem;"></i>
-                        <i class="fab fa-youtube" style="font-size: 1.4rem;"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                © 2025 COMPUTAMBOR - Educação criativa e divertida. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

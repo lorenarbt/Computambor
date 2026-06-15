@@ -1,235 +1,354 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>COMPUTAMBOR | Atividades do Curso</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLAYWISE | Atividades do Curso</title>
+  <meta name="description" content="4 aulas de pensamento computacional usando samba reggae e computação desplugada. Materiais para professores e alunos de 6 a 14 anos.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
-<body>
+<body data-page="atividades.html">
 
 <div class="container">
-    <!-- Navegação -->
-    <div class="navbar">
-        <div class="logo">COMPUTAMBOR</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Sobre nós</a></li>
-            <li><a href="#">Registros</a></li>
-            <li><a href="atividades.html" class="active">Atividades</a></li>
-            <li><a href="#">Contate nos</a></li>
+  <div id="pw-navbar"></div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- CABEÇALHO DO CURSO -->
+    <header class="course-header" aria-labelledby="course-title">
+      <span class="course-header__eyebrow">Pensamento Computacional</span>
+      <h1 id="course-title">O Pensamento Computacional que Pulsa com o Samba Reggae</h1>
+
+      <div class="course-header__desc">
+        <p><strong style="color:#fff;">O que as crianças vão aprender?</strong></p>
+        <p>Ao longo de 4 aulas, os pequenos serão os protagonistas de sua própria jornada lógica, explorando os pilares do pensamento computacional:</p>
+        <ul>
+          <li><b>Aula 1 — O Caminho do Algoritmo:</b> como criar passos e instruções claras para resolver desafios.</li>
+          <li><b>Aula 2 — Decomposição e Padrões:</b> aprendendo a quebrar grandes problemas em partes menores.</li>
+          <li><b>Aula 3 — Abstração e Lógica:</b> focando no que é importante e treinando o raciocínio.</li>
+          <li><b>Aula 4 — O Grande Desafio Final:</b> aplicando tudo em uma atividade integrada e colaborativa.</li>
         </ul>
-        <button class="btn-outline">Começar</button>
-    </div>
+        <p style="margin-top: 1rem;">
+          <b>Público-alvo:</b> Crianças de 6 a 14 anos &nbsp;·&nbsp;
+          <b>Duração:</b> 4 encontros &nbsp;·&nbsp;
+          <b>Sem necessidade de dispositivos eletrônicos!</b>
+        </p>
+      </div>
 
+      <div class="tech-tags" aria-label="Temas abordados">
+        <span class="tech-tag">Pensamento Computacional</span>
+        <span class="tech-tag">Computação Desplugada</span>
+        <span class="tech-tag">Percussão</span>
+        <span class="tech-tag">Samba Reggae</span>
+        <span class="tech-tag">Lógica</span>
+        <span class="tech-tag">Ritmo</span>
+      </div>
 
-    <!-- Informações principais do curso -->
-    <div class="course-info-card">
-        <div class="course-info-left">
-            <span class="course-code">Pensamento Computacional</span>
+      <div class="course-stats" aria-label="Estatísticas do curso">
+        <div class="course-stat"><i class="fas fa-video" aria-hidden="true"></i> 4 Aulas</div>
+        <div class="course-stat"><i class="fas fa-clock" aria-hidden="true"></i> 8h de Atividades</div>
+        <div class="course-stat"><i class="fas fa-certificate" aria-hidden="true"></i> Materiais de apoio</div>
+        <div class="course-stat"><i class="fas fa-users" aria-hidden="true"></i> Comunidade</div>
+        <div class="course-stat"><i class="fas fa-rocket" aria-hidden="true"></i> Do zero ao avanço</div>
+      </div>
+    </header>
+
+    <!-- MÓDULOS -->
+    <section class="modules-section" aria-labelledby="modules-title">
+      <h2 class="modules-title" id="modules-title">Aulas</h2>
+
+      <!-- Módulo 01 -->
+      <div class="module" role="region" aria-labelledby="mod-01">
+        <div class="module__header" aria-expanded="false" role="button" tabindex="0">
+          <h3 id="mod-01"><span class="module__number" aria-label="Módulo 01">01</span> Decomposição</h3>
+          <i class="fas fa-chevron-down module__toggle-icon" aria-hidden="true"></i>
         </div>
-        <h1 class="course-main-title">O PENSAMENTO COMPUTACIONAL QUE PULSA COM O SAMBA REGGAE</h1>
-        <p class="course-description">
-        O que as crianças vão aprender?
-        </p>
-
-        <p class="course-description">
-            Ao longo de 4 aulas, os pequenos serão os protagonistas de sua própria jornada lógica, explorando os pilares do pensamento computacional:
-        </p>
-
-        <ul class="course-description" style="margin-left: 40px;">
-            <li><b>Aula 1: O Caminho do Algoritmo</b> – Como criar passos e instruções claras para resolver desafios.</li>
-            <li><b>Aula 2: Decomposição e Padrões</b> – Aprendendo a quebrar grandes problemas em partes menores e a identificar repetições.</li>
-            <li><b>Aula 3: Abstração e Lógica</b> – Focando no que é importante e treinando o raciocínio para tomar decisões.</li>
-            <li><b>Aula 4: O Grande Desafio Final</b> – Aplicando tudo o que foi aprendido em uma atividade integrada e colaborativa.</li>
+        <ul class="module__lessons">
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_1/view">
+            <span class="lesson-item__code">0101</span>
+            <span class="lesson-item__title">Materiais Necessários</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_2/view">
+            <span class="lesson-item__code">0102</span>
+            <span class="lesson-item__title">Momento Inicial</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_3/view">
+            <span class="lesson-item__code">0103</span>
+            <span class="lesson-item__title">Desenvolvimento</span>
+            <span class="lesson-item__duration">40 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_4/view">
+            <span class="lesson-item__code">0104</span>
+            <span class="lesson-item__title">Fechamento</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_5/view">
+            <span class="lesson-item__code">0105</span>
+            <span class="lesson-item__title">Materiais</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_6/view">
+            <span class="lesson-item__code">0106</span>
+            <span class="lesson-item__title">Referências</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
         </ul>
+      </div>
 
-        <p class="course-description">
-            <b>Público-alvo:</b> Crianças de 6 a 14 anos.<br>
-            <b>Duração:</b> 4 encontros.<br>
-            <b>Não é necessário nenhum conhecimento prévio ou equipamento eletrônico!</b>
-        </p>
-        
-        <!-- Tecnologias -->
-        <div class="tech-tags">
-            <span class="tech-tag">Pensamento Computacional</span>
-            <span class="tech-tag">Computação Desplugada</span>
-            <span class="tech-tag">Percussão</span>
-            <span class="tech-tag">Samba Reggae</span>
-            <span class="tech-tag">Lógica</span>
-            <span class="tech-tag">Ritmo</span>
+      <!-- Módulo 02 -->
+      <div class="module" role="region" aria-labelledby="mod-02">
+        <div class="module__header" aria-expanded="false" role="button" tabindex="0">
+          <h3 id="mod-02"><span class="module__number" aria-label="Módulo 02">02</span> Reconhecimento de Padrões</h3>
+          <i class="fas fa-chevron-down module__toggle-icon" aria-hidden="true"></i>
         </div>
-        
-        <!-- Estatísticas do curso -->
-        <div class="course-stats-grid">
-            <div class="stat-card"><i class="fas fa-video"></i> 4 Aulas</div>
-            <div class="stat-card"><i class="fas fa-clock"></i> 8 Horas de Atividades</div>
-            <div class="stat-card"><i class="fas fa-certificate"></i> Materiais de apoio</div>
-            <div class="stat-card"><i class="fas fa-headset"></i> Comunidade</div>
-            <div class="stat-card"><i class="fas fa-rocket"></i> Ensinado do Zero</div>
-        </div>
-    </div>
+        <ul class="module__lessons">
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_7/view">
+            <span class="lesson-item__code">0201</span>
+            <span class="lesson-item__title">Materiais Necessários</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_8/view">
+            <span class="lesson-item__code">0202</span>
+            <span class="lesson-item__title">Momento Inicial</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_9/view">
+            <span class="lesson-item__code">0203</span>
+            <span class="lesson-item__title">Desenvolvimento</span>
+            <span class="lesson-item__duration">40 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_10/view">
+            <span class="lesson-item__code">0204</span>
+            <span class="lesson-item__title">Fechamento</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_11/view">
+            <span class="lesson-item__code">0205</span>
+            <span class="lesson-item__title">Materiais</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_12/view">
+            <span class="lesson-item__code">0206</span>
+            <span class="lesson-item__title">Referências</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Grade do Curso -->
-    <h2 class="section-title-module">Aulas</h2>
-    
-    <!-- Módulo 01 -->
-    <div class="module">
-        <div class="module-header">
-            <h3><span class="module-number">01</span> Decomposição</h3>
-            <i class="fas fa-chevron-down"></i>
+      <!-- Módulo 03 -->
+      <div class="module" role="region" aria-labelledby="mod-03">
+        <div class="module__header" aria-expanded="false" role="button" tabindex="0">
+          <h3 id="mod-03"><span class="module__number" aria-label="Módulo 03">03</span> Abstração</h3>
+          <i class="fas fa-chevron-down module__toggle-icon" aria-hidden="true"></i>
         </div>
-        <div class="module-lessons">
-            <div class="lesson-item"><span class="lesson-code">0101</span> Materiais Necessários <span class="duration"> 20 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0102</span> Momento Inicial <span class="duration"> 20 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0103</span> Desenvolvimento <span class="duration"> 40 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0104</span> Fechamento <span class="duration"> 20 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0105</span> Materiais <span class="duration">Leitura</span></div>
-            <div class="lesson-item"><span class="lesson-code">0106</span> Referências <span class="duration">Leitura</span></div>
-            
-        </div>
-    </div>
+        <ul class="module__lessons">
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_13/view">
+            <span class="lesson-item__code">0301</span>
+            <span class="lesson-item__title">Materiais Necessários</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_14/view">
+            <span class="lesson-item__code">0302</span>
+            <span class="lesson-item__title">Momento Inicial</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_15/view">
+            <span class="lesson-item__code">0303</span>
+            <span class="lesson-item__title">Desenvolvimento</span>
+            <span class="lesson-item__duration">40 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_16/view">
+            <span class="lesson-item__code">0304</span>
+            <span class="lesson-item__title">Fechamento</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_17/view">
+            <span class="lesson-item__code">0305</span>
+            <span class="lesson-item__title">Materiais</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_18/view">
+            <span class="lesson-item__code">0306</span>
+            <span class="lesson-item__title">Referências</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Módulo 02 -->
-    <div class="module">
-        <div class="module-header">
-            <h3><span class="module-number">02</span> Reconhecimento de padrões</h3>
-            <i class="fas fa-chevron-down"></i>
+      <!-- Módulo 04 -->
+      <div class="module" role="region" aria-labelledby="mod-04">
+        <div class="module__header" aria-expanded="false" role="button" tabindex="0">
+          <h3 id="mod-04"><span class="module__number" aria-label="Módulo 04">04</span> Algoritmos — Desafio Final</h3>
+          <i class="fas fa-chevron-down module__toggle-icon" aria-hidden="true"></i>
         </div>
-        <div class="module-lessons">
-            <div class="lesson-item"><span class="lesson-code">0201</span> Materiais Necessários <span class="duration">Duração: 20minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0202</span> Momento Inicial <span class="duration">Duração: 20minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0203</span> Desenvolvimento  <span class="duration">Duração: 40 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0204</span> Fechamento: <span class="duration">Duração: 20 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0205</span> Materiais </div>
-            <div class="lesson-item"><span class="lesson-code">0206</span> Referências </div>
-        </div>
-    </div>
+        <ul class="module__lessons">
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_19/view">
+            <span class="lesson-item__code">0401</span>
+            <span class="lesson-item__title">Materiais Necessários</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_20/view">
+            <span class="lesson-item__code">0402</span>
+            <span class="lesson-item__title">Momento Inicial</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_21/view">
+            <span class="lesson-item__code">0403</span>
+            <span class="lesson-item__title">Desenvolvimento</span>
+            <span class="lesson-item__duration">40 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_22/view">
+            <span class="lesson-item__code">0404</span>
+            <span class="lesson-item__title">Fechamento</span>
+            <span class="lesson-item__duration">20 min</span>
+            <i class="fas fa-external-link-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_23/view">
+            <span class="lesson-item__code">0405</span>
+            <span class="lesson-item__title">Materiais</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_24/view">
+            <span class="lesson-item__code">0406</span>
+            <span class="lesson-item__title">Referências</span>
+            <span class="lesson-item__duration">Leitura</span>
+            <i class="fas fa-file-alt lesson-item__icon" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Módulo 03 -->
-    <div class="module">
-        <div class="module-header">
-            <h3><span class="module-number">03</span> Abstração</h3>
-            <i class="fas fa-chevron-down"></i>
+      <!-- Módulo 05 -->
+      <div class="module" role="region" aria-labelledby="mod-05">
+        <div class="module__header" aria-expanded="false" role="button" tabindex="0">
+          <h3 id="mod-05"><span class="module__number" aria-label="Módulo 05">05</span> Tutoriais</h3>
+          <i class="fas fa-chevron-down module__toggle-icon" aria-hidden="true"></i>
         </div>
-        <div class="module-lessons">
-            <div class="lesson-item"><span class="lesson-code">0301</span> Materiais Necessários <span class="duration">Duração: 20minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0302</span> Momento Inicial <span class="duration">Duração: 20minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0303</span> Desenvolvimento  <span class="duration">Duração: 40 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0304</span> Fechamento: <span class="duration">Duração: 20 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0305</span> Materiais </div>
-            <div class="lesson-item"><span class="lesson-code">0306</span> Referências </div>
-        </div>
-    </div>
+        <ul class="module__lessons">
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_25/view">
+            <span class="lesson-item__code">0501</span>
+            <span class="lesson-item__title">Apresentação</span>
+            <span class="lesson-item__duration">08:38</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_26/view">
+            <span class="lesson-item__code">0502</span>
+            <span class="lesson-item__title">Mini Documentário</span>
+            <span class="lesson-item__duration">40:13</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_27/view">
+            <span class="lesson-item__code">0503</span>
+            <span class="lesson-item__title">Samba Reggae</span>
+            <span class="lesson-item__duration">07:58</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_28/view">
+            <span class="lesson-item__code">0504</span>
+            <span class="lesson-item__title">Computação Desplugada</span>
+            <span class="lesson-item__duration">04:54</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_29/view">
+            <span class="lesson-item__code">0505</span>
+            <span class="lesson-item__title">Pensamento Computacional</span>
+            <span class="lesson-item__duration">09:42</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_30/view">
+            <span class="lesson-item__code">0506</span>
+            <span class="lesson-item__title">Aplicação das Atividades</span>
+            <span class="lesson-item__duration">08:04</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_31/view">
+            <span class="lesson-item__code">0507</span>
+            <span class="lesson-item__title">Utilização dos Materiais</span>
+            <span class="lesson-item__duration">04:34</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_32/view">
+            <span class="lesson-item__code">0508</span>
+            <span class="lesson-item__title">Recursos Alternativos</span>
+            <span class="lesson-item__duration">05:08</span>
+            <i class="fas fa-play-circle lesson-item__icon" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Módulo 04 -->
-    <div class="module">
-        <div class="module-header">
-            <h3><span class="module-number">04</span> Algoritmos</h3>
-            <i class="fas fa-chevron-down"></i>
+      <!-- Módulo 06 -->
+      <div class="module" role="region" aria-labelledby="mod-06">
+        <div class="module__header" aria-expanded="false" role="button" tabindex="0">
+          <h3 id="mod-06"><span class="module__number" aria-label="Módulo 06">06</span> Download — Materiais para Impressão</h3>
+          <i class="fas fa-chevron-down module__toggle-icon" aria-hidden="true"></i>
         </div>
-        <div class="module-lessons">
-            <div class="lesson-item"><span class="lesson-code">0401</span> Materiais Necessários <span class="duration">Duração: 20minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0402</span> Momento Inicial <span class="duration">Duração: 20minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0403</span> Desenvolvimento  <span class="duration">Duração: 40 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0404</span> Fechamento: <span class="duration">Duração: 20 minutos</span></div>
-            <div class="lesson-item"><span class="lesson-code">0405</span> Materiais </div>
-            <div class="lesson-item"><span class="lesson-code">0406</span> Referências </div>
-        </div>
-    </div>
+        <ul class="module__lessons">
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_33/view">
+            <span class="lesson-item__code">0601</span>
+            <span class="lesson-item__title">Aula 1 — Material para imprimir</span>
+            <span class="lesson-item__duration">PDF</span>
+            <i class="fas fa-download lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_34/view">
+            <span class="lesson-item__code">0602</span>
+            <span class="lesson-item__title">Aula 2 — Material para imprimir</span>
+            <span class="lesson-item__duration">PDF</span>
+            <i class="fas fa-download lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_35/view">
+            <span class="lesson-item__code">0603</span>
+            <span class="lesson-item__title">Aula 3 — Material para imprimir</span>
+            <span class="lesson-item__duration">PDF</span>
+            <i class="fas fa-download lesson-item__icon" aria-hidden="true"></i>
+          </li>
+          <li class="lesson-item" data-link="https://drive.google.com/file/d/SEU_LINK_AQUI_36/view">
+            <span class="lesson-item__code">0604</span>
+            <span class="lesson-item__title">Aula 4 — Material para imprimir</span>
+            <span class="lesson-item__duration">PDF</span>
+            <i class="fas fa-download lesson-item__icon" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Módulo 05 -->
-    <div class="module">
-        <div class="module-header">
-            <h3><span class="module-number">05</span> Tutoriais</h3>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="module-lessons">
-            <div class="lesson-item"><span class="lesson-code">0502</span> Apresentação <span class="duration">08:38</span></div>
-            <div class="lesson-item"><span class="lesson-code">0503</span> Mini Documentário <span class="duration">40:13</span></div>
-            <div class="lesson-item"><span class="lesson-code">0503</span> Samba Reggae <span class="duration">07:58</span></div>
-            <div class="lesson-item"><span class="lesson-code">0504</span> Computação Desplugada <span class="duration">04:54</span></div>
-            <div class="lesson-item"><span class="lesson-code">0504</span> Pensamento Computacional <span class="duration">09:42</span></div>
-            <div class="lesson-item"><span class="lesson-code">0505</span> Aplicação das atividades <span class="duration">08:04</span></div>
-            <div class="lesson-item"><span class="lesson-code">0506</span> Utilização dos materiais <span class="duration">04:34</span></div>
-            <div class="lesson-item"><span class="lesson-code">0506</span> Recursos Alternativos <span class="duration">05:08</span></div>
-        </div>
-    </div>
+    </section><!-- /modules-section -->
 
-    <!-- Módulo 06 -->
-    <div class="module">
-        <div class="module-header">
-            <h3><span class="module-number">06</span> Download de Materiais para impressão</h3>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="module-lessons">
-            <div class="lesson-item"><span class="lesson-code">0601</span> Aula 1 </div>
-            <div class="lesson-item"><span class="lesson-code">0602</span> Aula 2 </div>
-            <div class="lesson-item"><span class="lesson-code">0603</span> Aula 3 </div>
-            <div class="lesson-item"><span class="lesson-code">0604</span> Aula 4 </div>    
-    </div>
+  </div><!-- /container -->
+</main>
 
-    <!-- Cookie Notice -->
-    <!-- <div class="cookie-notice">
-        <p>Este site utiliza cookies para a análise de uso e anúncios.</p>
-        <div class="cookie-buttons">
-            <button class="btn-customize">Personalizar</button>
-            <button class="btn-continue-cookie">Continuar</button>
-        </div>
-    </div>
+<div id="pw-footer"></div>
 
-</div> -->
-
-<footer>
-    <div class="container">
-        <div class="footer-inner">
-            <div>
-                <div class="footer-logo">COMPUTAMBOR</div>
-                <p style="margin-top: 16px; max-width: 260px;">Transformando educação em aventura para mentes curiosas.</p>
-            </div>
-            <div>
-                <h4>Links rápidos</h4>
-                <ul style="list-style: none; margin-top: 10px;">
-                    <li><a href="index.html" style="color:#ddd; text-decoration: none;">Home</a></li>
-                    <li><a href="#" style="color:#ddd; text-decoration: none;">Sobre nós</a></li>
-                    <li><a href="atividades.html" style="color:#ddd; text-decoration: none;">Atividades</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Redes</h4>
-                <div style="display: flex; gap: 15px; margin-top: 12px;">
-                    <i class="fab fa-instagram" style="font-size: 1.4rem;"></i>
-                    <i class="fab fa-facebook" style="font-size: 1.4rem;"></i>
-                    <i class="fab fa-youtube" style="font-size: 1.4rem;"></i>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            © 2025 COMPUTAMBOR - Educação criativa e divertida. Todos os direitos reservados.
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Accordion para os módulos
-    document.querySelectorAll('.module-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const module = header.parentElement;
-            module.classList.toggle('active');
-        });
-    });
-    
-    // Links demonstrativos
-    document.querySelectorAll('a[href="#"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Navegação demonstrativa: esta é uma landing page estática do COMPUTAMBOR.');
-        });
-    });
-</script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
