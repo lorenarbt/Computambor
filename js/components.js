@@ -1,5 +1,5 @@
 /**
- * PLAYWISE — components.js
+ * COMPUTAMBOR — components.js
  * Injeta header (partials/header.html) e footer (partials/footer.html)
  * em cada página via fetch. Fallback inline para file://.
  */
@@ -34,7 +34,7 @@
   function navbarHTML() {
     return `
 <nav class="navbar" aria-label="Navegação principal">
-  <a href="index.html" class="navbar__logo" aria-label="Playwise - início">PLAYWISE</a>
+  <a href="index.html" class="navbar__logo" aria-label="COMPUTAMBOR - início">COMPUTAMBOR</a>
   <ul class="navbar__links" id="nav-links" role="list">
     <li><a href="index.html">Home</a></li>
     <li><a href="sobrenos.html">Sobre nós</a></li>
@@ -54,7 +54,7 @@
   <div class="container">
     <div class="footer__inner">
       <div>
-        <div class="footer__logo">PLAYWISE</div>
+        <div class="footer__logo">COMPUTAMBOR</div>
         <p class="footer__tagline">Transformando educação em aventura para mentes curiosas.</p>
       </div>
       <div>
@@ -77,7 +77,7 @@
       </div>
     </div>
     <p class="footer__copyright">
-      © 2025 PLAYWISE — Educação criativa e divertida. Todos os direitos reservados.
+      © 2025 COMPUTAMBOR — Educação criativa e divertida. Todos os direitos reservados.
     </p>
   </div>
 </footer>`;

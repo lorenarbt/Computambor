@@ -1,5 +1,5 @@
 /**
- * PLAYWISE — main.js
+ * COMPUTAMBOR — main.js
  * Componentes JS reutilizáveis: navbar mobile, accordion, lesson links
  */
 
