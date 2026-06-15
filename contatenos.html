@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COMPUTAMBOR | Contate-nos</title>
-  <meta name="description" content="Entre em contato com a equipe COMPUTAMBOR.">
+  <meta name="description" content="Entre em contato com a equipe Computambor.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -105,6 +105,9 @@
       .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
 </head>
 <body data-page="contatenos.html">
 
@@ -117,21 +120,21 @@
 
     <section class="about-hero" aria-labelledby="contact-title">
       <h1 id="contact-title">Contate-nos</h1>
-      <p>Tem dúvidas, sugestões ou quer saber mais sobre o projeto? Fale com a equipe COMPUTAMBOR.</p>
+      <p>Tem dúvidas sobre como aplicar as estratégias do Computambor ou tem ideias que deseja compartilhar conosco? Contate-nos!</p>
     </section>
 
     <div class="contact-grid">
       <div class="contact-info">
         <h2>Fale conosco</h2>
-        <p>Estamos à disposição para conversar sobre o projeto, parcerias pedagógicas e como levar o COMPUTAMBOR para a sua escola ou comunidade.</p>
+        <p>Estamos à disposição para conversar sobre o projeto, parcerias pedagógicas e como levar o  para a sua escola ou comunidade.</p>
         <div class="contact-channels">
           <div class="contact-channel">
             <i class="fab fa-instagram" aria-hidden="true"></i>
-            <span>@COMPUTAMBOR.edu</span>
+            <span>@computambor</span>
           </div>
           <div class="contact-channel">
             <i class="fab fa-youtube" aria-hidden="true"></i>
-            <span>Canal COMPUTAMBOR no YouTube</span>
+            <span>Canal  no YouTube</span>
           </div>
           <div class="contact-channel">
             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -140,7 +143,7 @@
         </div>
       </div>
 
-      <form class="contact-form" aria-label="Formulário de contato" onsubmit="handleSubmit(event)">
+      <form id="contact-form" class="contact-form" aria-label="Formulário de contato">
         <div class="form-group">
           <label for="name">Nome</label>
           <input type="text" id="name" name="name" placeholder="Seu nome" required>
@@ -167,11 +170,27 @@
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>
 <script>
-  function handleSubmit(e) {
+  emailjs.init('SUA_PUBLIC_KEY');
+
+  const form    = document.getElementById('contact-form');
+  const btn     = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    alert('Mensagem enviada! (Formulário demonstrativo — configure um backend ou Formspree para produção.)');
-    e.target.reset();
-  }
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando…';
+
+    try {
+      await emailjs.sendForm('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', form);
+      alert('Mensagem enviada com sucesso! Retornaremos em breve.');
+      form.reset();
+    } catch (_) {
+      alert('Algo deu errado. Tente pelas redes sociais.');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = 'Enviar mensagem <i class="fas fa-paper-plane"></i>';
+    }
+  });
 </script>
 </body>
 </html>
