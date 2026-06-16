@@ -187,9 +187,10 @@
       await emailjs.sendForm('service_qc95sno', 'template_bi4fg39', form);
       alert('Mensagem enviada com sucesso! Retornaremos em breve.');
       form.reset();
-    } catch (_) {
+    } catch (error) {
+      console.error('Erro EmailJS:', error);  // <- adicione isso
       alert('Algo deu errado. Tente pelas redes sociais.');
-    } finally {
+} finally {
       btn.disabled = false;
       btn.innerHTML = 'Enviar mensagem <i class="fas fa-paper-plane"></i>';
     }
