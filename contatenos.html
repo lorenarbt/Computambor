@@ -144,6 +144,10 @@
 
       <form id="contact-form" class="contact-form" aria-label="Formulário de contato">
         <div class="form-group">
+          <label for="title">Assunto</label>
+          <input type="text" id="title" name="title" placeholder="Assunto da mensagem" required>
+        </div>
+        <div class="form-group">
           <label for="name">Nome</label>
           <input type="text" id="name" name="name" placeholder="Seu nome" required>
         </div>
@@ -169,7 +173,7 @@
 <script src="js/components.js"></script>
 <script src="js/main.js"></script>
 <script>
-  emailjs.init('SUA_PUBLIC_KEY');
+  emailjs.init('vi_JHKUuRSjYCz6qQ');
 
   const form    = document.getElementById('contact-form');
   const btn     = form.querySelector('button[type="submit"]');
@@ -180,7 +184,7 @@
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando…';
 
     try {
-      await emailjs.sendForm('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', form);
+      await emailjs.sendForm('service_qc95sno', 'template_bi4fg39', form);
       alert('Mensagem enviada com sucesso! Retornaremos em breve.');
       form.reset();
     } catch (_) {
