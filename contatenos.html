@@ -188,7 +188,7 @@
       alert('Mensagem enviada com sucesso! Retornaremos em breve.');
       form.reset();
     } catch (error) {
-      console.error('Erro EmailJS:', error);  // <- adicione isso
+      console.error('Erro EmailJS:', JSON.stringify(error)); // <- mudou aqui
       alert('Algo deu errado. Tente pelas redes sociais.');
 } finally {
       btn.disabled = false;
